@@ -1,16 +1,9 @@
 package main
 
-import "fmt"
-
 func main() {
-	card := deck{newCard(), "six of spades"}
-	card = append(card, "queen of hearts")
-	fmt.Println(card)
+	cards := newDeck()
+	hand, remainingCards := deal(cards, 12)
+	hand.print()
+	remainingCards.print()
 
-	card.print()
-
-}
-
-func newCard() string {
-	return "Ace of diamonds"
 }
